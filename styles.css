@@ -1,53 +1,54 @@
-/* Reset some default styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
 }
 
-/* Body styling */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #fff; /* White background */
-    color: #333; /* Dark text color */
+.header {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
-/* Header styling */
-header {
-    background-color: #ED1C24; /* Red */
-    color: white;
-    padding: 20px;
-    text-align: center;
+.button {
+  font-family: 'Arial', sans-serif;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Navigation bar styling */
-nav {
-    background-color: #000; /* Black */
-    color: white;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
+.button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 15px;
+  width: 90%;
+  max-width: 400px;
 }
 
-/* Main content area styling */
-.main-content {
-    padding: 20px;
+@media (max-width: 600px) {
+  .header {
+    font-size: 2rem;
+  }
 }
 
-/* Footer styling */
-footer {
-    background-color: #ED1C24; /* Red */
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+@media (min-width: 601px) and (max-width: 1200px) {
+  .header {
+    font-size: 2.5rem;
+  }
 }
