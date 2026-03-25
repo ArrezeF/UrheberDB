@@ -1,0 +1,53 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text color */
+}
+
+/* Header styling */
+header {
+    background-color: #ED1C24; /* Red */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation bar styling */
+nav {
+    background-color: #000; /* Black */
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+/* Main content area styling */
+.main-content {
+    padding: 20px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #ED1C24; /* Red */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
