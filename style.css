@@ -1,0 +1,45 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #222; background: #f2f2f2; min-height: 100vh; display: flex; flex-direction: column; }
+a { color: inherit; text-decoration: underline; cursor: pointer; }
+
+/* HEADER */
+.site-header { background: #fff; border-bottom: 3px solid #e2001a; }
+.header-top { display: flex; align-items: center; justify-content: space-between; padding: 12px 32px; border-bottom: 1px solid #d4d4d4; }
+.orf-logo { display: flex; align-items: center; gap: 8px; }
+.orf-box { background: #e2001a; color: #fff; font-weight: 700; font-size: 20px; padding: 3px 8px; }
+.orf-fueralle { font-size: 20px; font-weight: 700; color: #1a1a1a; }
+.header-title { font-size: 18px; font-weight: 700; letter-spacing: 0.05em; color: #1a1a1a; text-transform: uppercase; }
+.header-nav { background: #1a1a1a; display: flex; align-items: center; padding: 0 32px; }
+.header-nav a { color: #fff; text-decoration: underline; font-size: 14px; font-weight: 600; padding: 12px 32px 12px 0; border-bottom: 2px solid transparent; }
+.header-nav a:hover { border-color: #e2001a; }
+.header-nav a.nav-right { margin-left: auto; padding-right: 0; }
+
+/* MAIN */
+.page-main { flex: 1; padding: 40px 32px; }
+.login-card { background: #fff; border: 1px solid #d4d4d4; max-width: 860px; padding: 40px 44px 50px; }
+.login-card h1 { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+.login-card .subtitle { font-size: 14px; color: #555; padding-bottom: 20px; border-bottom: 1px solid #d4d4d4; margin-bottom: 36px; }
+.mediakey-logo { display: flex; align-items: center; gap: 8px; margin-bottom: 28px; }
+.mk-wordmark { font-size: 22px; font-weight: 700; letter-spacing: 0.03em; color: #1a1a1a; }
+.mk-wordmark span { color: #e2001a; }
+
+.btn-mediakey { background: #e2001a; color: #fff; font-size: 15px; font-weight: 700; border: none; padding: 14px 40px; cursor: pointer; min-width: 300px; position: relative; overflow: hidden; }
+.btn-mediakey:hover { background: #b8001a; }
+.btn-mediakey:disabled { opacity: 0.7; cursor: not-allowed; }
+
+.success-msg { display: none; margin-top: 16px; padding: 12px 16px; background: #edfaf0; border-left: 3px solid #28a745; font-size: 14px; color: #1a5c2a; }
+
+/* FOOTER */
+.site-footer { background: #1a1a1a; color: #fff; padding: 36px 32px 0; margin-top: auto; }
+.footer-inner { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; padding-bottom: 32px; }
+.footer-logo { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+.footer-logo .orf-box { font-size: 15px; padding: 2px 6px; }
+.footer-logo .orf-fueralle { font-size: 15px; color: #fff; }
+.footer-address { font-size: 13px; line-height: 1.9; color: #ccc; }
+.footer-address strong { color: #fff; display: block; }
+.footer-links { display: flex; flex-direction: column; gap: 7px; }
+.footer-links a { color: #ccc; text-decoration: none; font-size: 13px; }
+.footer-links a:hover { color: #fff; }
+.footer-sub { margin-top: 22px; font-size: 13px; }
+.footer-sub a { color: #aaa; text-decoration: none; }
+.footer-bar { background: #e2001a; height: 8px; margin: 0 -32px; }
