@@ -1,0 +1,133 @@
+<!-- Page Header -->
+<div class="page-header">
+  <h1>Willkommen, {{ auth.currentUser?.name }}</h1>
+  <p>ORF Reporting Database – Hier sehen Sie wann und wo Ihre Werke im ORF ausgestrahlt wurden.</p>
+</div>
+
+<!-- Stats -->
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="stat-icon red"><i class="pi pi-chart-bar"></i></div>
+    <div class="stat-info">
+      <div class="stat-value">{{ alleGesamt }}</div>
+      <div class="stat-label">Ausstrahlungen gesamt</div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon blue"><i class="pi pi-desktop"></i></div>
+    <div class="stat-info">
+      <div class="stat-value">{{ tvGesamt }}</div>
+      <div class="stat-label">Fernsehen</div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon green"><i class="pi pi-globe"></i></div>
+    <div class="stat-info">
+      <div class="stat-value">{{ onlineGesamt }}</div>
+      <div class="stat-label">Online (ORF ON)</div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon orange"><i class="pi pi-volume-up"></i></div>
+    <div class="stat-info">
+      <div class="stat-value">{{ radioGesamt }}</div>
+      <div class="stat-label">Radio</div>
+    </div>
+  </div>
+</div>
+
+<!-- Tabs: Fernsehen / Online / Radio -->
+<div class="page-card" style="margin-top: 1.5rem">
+  <p-tabView>
+
+    <!-- FERNSEHEN -->
+    <p-tabPanel header="📺 Fernsehen">
+      <p-table [value]="tvProduktionen" [tableStyle]="{'min-width': '50rem'}" [paginator]="true" [rows]="10" styleClass="p-datatable-sm">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>ID</th>
+            <th>Produktionstitel</th>
+            <th>Sender</th>
+            <th>Ausstrahlungsdatum</th>
+            <th>Uhrzeit</th>
+            <th>Dauer</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-p>
+          <tr>
+            <td><span style="color:#aaa;font-size:0.8rem">{{ p.id }}</span></td>
+            <td><strong>{{ p.titel }}</strong></td>
+            <td><span class="sender-badge tv">{{ p.sender }}</span></td>
+            <td>{{ p.datum }}</td>
+            <td>{{ p.uhrzeit }}</td>
+            <td>{{ p.dauer }}</td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr><td colspan="6" style="text-align:center;color:#aaa;padding:2rem">Keine Fernsehausstrahlungen gefunden.</td></tr>
+        </ng-template>
+      </p-table>
+    </p-tabPanel>
+
+    <!-- ONLINE -->
+    <p-tabPanel header="🌐 Online">
+      <p-table [value]="onlineProduktionen" [tableStyle]="{'min-width': '55rem'}" [paginator]="true" [rows]="10" styleClass="p-datatable-sm">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>ID</th>
+            <th>Produktionstitel</th>
+            <th>Plattform</th>
+            <th>Veröffentlicht am</th>
+            <th>Offline ab</th>
+            <th>Dauer online</th>
+            <th>Abrufe</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-p>
+          <tr>
+            <td><span style="color:#aaa;font-size:0.8rem">{{ p.id }}</span></td>
+            <td><strong>{{ p.titel }}</strong></td>
+            <td><span class="sender-badge online">{{ p.plattform }}</span></td>
+            <td>{{ p.veroeffentlicht }}</td>
+            <td>{{ p.offline }}</td>
+            <td><strong style="color:#2e7d32">{{ p.onlineDauer }}</strong></td>
+            <td>{{ p.abrufe }}</td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr><td colspan="7" style="text-align:center;color:#aaa;padding:2rem">Keine Online-Veröffentlichungen gefunden.</td></tr>
+        </ng-template>
+      </p-table>
+    </p-tabPanel>
+
+    <!-- RADIO -->
+    <p-tabPanel header="📻 Radio">
+      <p-table [value]="radioProduktionen" [tableStyle]="{'min-width': '50rem'}" [paginator]="true" [rows]="10" styleClass="p-datatable-sm">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>ID</th>
+            <th>Produktionstitel</th>
+            <th>Sender</th>
+            <th>Ausstrahlungsdatum</th>
+            <th>Uhrzeit</th>
+            <th>Dauer</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-p>
+          <tr>
+            <td><span style="color:#aaa;font-size:0.8rem">{{ p.id }}</span></td>
+            <td><strong>{{ p.titel }}</strong></td>
+            <td><span class="sender-badge radio">{{ p.sender }}</span></td>
+            <td>{{ p.datum }}</td>
+            <td>{{ p.uhrzeit }}</td>
+            <td>{{ p.dauer }}</td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr><td colspan="6" style="text-align:center;color:#aaa;padding:2rem">Keine Radioausstrahlungen gefunden.</td></tr>
+        </ng-template>
+      </p-table>
+    </p-tabPanel>
+
+  </p-tabView>
+</div>
